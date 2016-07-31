@@ -1,0 +1,18 @@
+build:
+  image: eboraas/laravel
+  commands:
+    - chmod -R 777 storage/
+    - chmod -R 777 bootstrap/cache/
+    - composer install
+    - cp .env.example .env
+    - php artisan key:generate
+    - vendor/bin/phpunit tests/
+
+deploy:
+  ssh:
+    host: 13.67.63.4
+    user: root
+    port: 8023
+    commands:
+      - cd /deploy
+      - ansible-playbook -i production  main.yml
