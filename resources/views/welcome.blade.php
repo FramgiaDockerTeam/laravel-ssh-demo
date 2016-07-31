@@ -39,6 +39,7 @@
         <div class="container">
             <div class="content">
                 <div class="title">Framgia</div>
+                <p>Laravel 5</p>
             </div>
         </div>
     </body>
