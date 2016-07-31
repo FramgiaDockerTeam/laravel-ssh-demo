@@ -38,7 +38,7 @@
     <body>
         <div class="container">
             <div class="content">
-                <div class="title">Framgia 123</div>
+                <div class="title">Framgia hihi</div>
                 <p>Laravel 5</p>
             </div>
         </div>
