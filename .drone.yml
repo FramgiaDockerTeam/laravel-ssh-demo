@@ -12,7 +12,7 @@ deploy:
   ssh:
     host: 13.67.63.4
     user: root
-    port: 8023
+    port: 8022
     commands:
       - cd /deploy
       - ansible-playbook -i production  main.yml
