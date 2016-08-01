@@ -38,7 +38,7 @@
     <body>
         <div class="container">
             <div class="content">
-                <div class="title">Framgia hihi test, muon di tu</div>
+                <div class="title">Framgia hihi test di tu</div>
                 <p>Laravel 5</p>
             </div>
         </div>
