@@ -36,7 +36,7 @@
         </style>
     </head>
     <body>
-        <p>XXX</p>
+        <p>Hahaha</p>
         <div class="container">
             <div class="content">
                 <div class="title">Framgia Love Cui Bap</div>
