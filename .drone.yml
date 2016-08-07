@@ -23,4 +23,5 @@ deploy:
     user: root
     port: 8222
     commands:
-      - /scripts/deploy.sh
+      - cd /scripts/
+      - ./deploy.sh
