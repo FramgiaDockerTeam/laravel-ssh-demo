@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Laravel</title>
+        <title>Laravel SSH</title>
 
         <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
 
@@ -36,7 +36,6 @@
         </style>
     </head>
     <body>
-        <p>XXX</p>
         <div class="container">
             <div class="content">
                 <div class="title">Framgia Love Cui Bap</div>
