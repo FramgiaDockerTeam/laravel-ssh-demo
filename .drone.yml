@@ -20,9 +20,8 @@
 deploy:
   ssh:
     image: framgia/ansible-drone
-    host: 172.17.0.3
+    host: 10.0.1.126
     user: root
     port: 22
     commands:
-      - ls -la .ansible
-      - ansible-playbook -i .ansible/staging .ansible/site.yml
+      - ansible-playbook -i .ansible/production .ansible/site.yml
