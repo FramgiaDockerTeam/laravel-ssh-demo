@@ -25,5 +25,6 @@ deploy:
     port: 22
     commands:
       - ls -la /root/.ssh
-      - ansible all -m ping -i .ansible/production -vvv
-      - ansible-playbook -i .ansible/production .ansible/site.yml
+      # - ansible all -m ping -i .ansible/production -vvv
+      - ssh -v -C -q -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o Port=8222 -o 'IdentityFile="/root/.ssh/id_rsa"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o User=root -o ConnectTimeout=10
+      # - ansible-playbook -i .ansible/production .ansible/site.yml
