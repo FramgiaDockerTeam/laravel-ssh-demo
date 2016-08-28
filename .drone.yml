@@ -24,6 +24,7 @@ deploy:
     user: root
     port: 22
     commands:
-      - ansible all -m ping -i production -vvv
-      # - ssh -v -C -q -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o Port=8222 -o 'IdentityFile="/root/.ssh/id_rsa"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o User=root -o ConnectTimeout=10 10.0.1.126
+      - sed -i 's/^mesg n$/tty -s \&\& mesg n/g' /root/.profile
+      - ssh -v -C -q -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o Port=8222 -o 'IdentityFile="/root/.ssh/id_rsa"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o User=root -o ConnectTimeout=10 10.0.1.126
+      # - ansible all -m ping -i production -vvv
       # - ansible-playbook -i .ansible/production .ansible/site.yml
