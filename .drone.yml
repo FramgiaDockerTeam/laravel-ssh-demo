@@ -1,12 +1,12 @@
-build:
-  image: eboraas/laravel
-  commands:
-    - chmod -R 777 storage/
-    - chmod -R 777 bootstrap/cache/
-    - composer install
-    - cp .env.example .env
-    - php artisan key:generate
-    - vendor/bin/phpunit tests/
+# build:
+#   image: eboraas/laravel
+#   commands:
+#     - chmod -R 777 storage/
+#     - chmod -R 777 bootstrap/cache/
+#     - composer install
+#     - cp .env.example .env
+#     - php artisan key:generate
+#     - vendor/bin/phpunit tests/
 
 # deploy:
 #   ssh:
@@ -19,9 +19,10 @@ build:
 
 deploy:
   ssh:
-    host: 45.32.62.179
+    image: framgia/ansible-drone
+    host: 172.17.0.3
     user: root
-    port: 8222
+    port: 22
     commands:
-      - cd /scripts/
-      - ./deploy.sh
+      - ls -la /drone/src/.ansible
+      - ansible-playbook -i /drone/src/.ansible/staging /drone/src/.ansible/site.yml
