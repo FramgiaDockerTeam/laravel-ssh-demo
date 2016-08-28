@@ -24,5 +24,6 @@ deploy:
     user: root
     port: 22
     commands:
+      - ls -la /root/.ssh
       - ansible all -m ping -i .ansible/production -vvv
       - ansible-playbook -i .ansible/production .ansible/site.yml
