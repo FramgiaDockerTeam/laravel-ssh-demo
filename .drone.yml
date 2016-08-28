@@ -24,5 +24,5 @@ deploy:
     user: root
     port: 22
     commands:
-      - ssh -q -v -o StrictHostKeyChecking=no root@10.0.1.126 exit
+      - ssh-keygen -t rsa -f /root/.ssh/id_rsa -q -P ""
       - ansible-playbook -i .ansible/production .ansible/site.yml
