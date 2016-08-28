@@ -24,5 +24,5 @@ deploy:
     user: root
     port: 22
     commands:
-      - cd .ansible
-      - ansible-playbook -i production site.yml
+      - ssh -T root@10.0.1.126
+      - ansible-playbook -i .ansible/production .ansible/site.yml
