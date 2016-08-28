@@ -24,4 +24,5 @@ deploy:
     user: root
     port: 22
     commands:
+      - ping -c 3 10.0.1.126
       - ansible-playbook -i .ansible/production .ansible/site.yml
