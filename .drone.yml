@@ -20,9 +20,9 @@
 deploy:
   ssh:
     image: framgia/ansible-drone
-    host: 10.0.1.126
+    host: 45.32.253.75
     user: root
-    port: 8222
+    port: 22
     commands:
       # - sed -i 's/^mesg n$/tty -s \&\& mesg n/g' /root/.profile
       # - ssh -v -C -q -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o Port=8222 -o 'IdentityFile="/root/.ssh/id_rsa"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o User=root -o ConnectTimeout=10 10.0.1.126
