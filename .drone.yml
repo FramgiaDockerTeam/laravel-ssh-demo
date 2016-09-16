@@ -31,6 +31,6 @@ deploy:
       # - cat /drone/src/github.com/FramgiaDockerTeam/laravel-ssh-source/.ansible/ssh_key/id_rsa
       # - ansible-playbook -i production site.yml -vvv
       # - ls -la
-      # - cat /root/.ssh/id_rsa
+      - cat /root/.ssh/id_rsa
       # - ansible all -m ping -i production -vvvv
       - ssh -C -vvv -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o Port=22 -o 'IdentityFile="ssh_key/id_rsa"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o User=deploy -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/ansible-ssh-%h-%p-%r -tt 45.32.253.75
