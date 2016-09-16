@@ -31,4 +31,4 @@ deploy:
       - cat ssh_key/id_rsa
       # - ansible-playbook -i production site.yml -vvv
       # - ls -la
-      - ansible all -m ping -i production
+      - ansible all -m ping -i production -vvvv
