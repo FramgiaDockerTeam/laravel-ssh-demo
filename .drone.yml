@@ -18,19 +18,16 @@
 #       - ansible-playbook -i production  main.yml
 
 deploy:
-  ssh:
+  ansible:
     image: framgia/ansible-drone
-    host: 45.32.253.75
-    user: root
-    port: 22
     commands:
       # - sed -i 's/^mesg n$/tty -s \&\& mesg n/g' /root/.profile
       # - ssh -v -C -q -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o Port=8222 -o 'IdentityFile="/root/.ssh/id_rsa"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o User=root -o ConnectTimeout=10 10.0.1.126
-      - ansible --version
+      # - ansible --version
       # - ping -w 3 45.32.253.75
       # - cat /drone/src/github.com/FramgiaDockerTeam/laravel-ssh-source/.ansible/ssh_key/id_rsa
-      # - ansible-playbook -i production site.yml -vvv
+      - ansible-playbook -i production site.yml --extra-vars='ansible_become_pass=deploy123'
       # - ls -la
       # - cat /root/.ssh/id_rsa
-      - ansible all -m ping -i production -vvvv
+      # - ansible all -m ping -i production -vvvv
       # - ssh -C -vvv -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o Port=22 -o 'IdentityFile="ssh_key/id_rsa"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o User=deploy -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/ansible-ssh-%h-%p-%r -tt 45.32.253.75

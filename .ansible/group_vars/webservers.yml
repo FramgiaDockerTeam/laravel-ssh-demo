@@ -2,4 +2,4 @@ server_name: "localhost"
 shared_items:
   - .env
   - storage
-  - node_modules
+node_modules: node_modules

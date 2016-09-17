@@ -1,4 +1,4 @@
-- name: start mysql
-  shell: service mysql start
+- name: restart mysql
+  shell: service mysql restart
   become: yes
   become_user: root
