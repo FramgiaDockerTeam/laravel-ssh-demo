@@ -1,4 +1,5 @@
 # Detect the very first time run task on host
+- debug: var=init
 - name: Check known host database
   stat: path=/knownhost_db
   register: knownhost_db

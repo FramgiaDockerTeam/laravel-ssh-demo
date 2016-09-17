@@ -4,7 +4,7 @@
 
   roles:
     - { role: knownhost_db }
-    - { role: setup_db, when: knownhost_db.stat.exists is defined and knownhost_db.stat.exists == false and init}
+    - { role: setup_db, when: knownhost_db.stat.exists is defined and knownhost_db.stat.exists == false and init is defined}
 
 - hosts: webservers
   become: yes
@@ -19,7 +19,7 @@
 
   roles:
     - { role: knownhost_web }
-    - { role: setup_web, when: knownhost_web.stat.exists is defined and knownhost_web.stat.exists == false and init}
+    - { role: setup_web, when: knownhost_web.stat.exists is defined and knownhost_web.stat.exists == false and init is defined}
     - { role: directory }
     - { role: common }
     - { role: shared }

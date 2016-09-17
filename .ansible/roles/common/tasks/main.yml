@@ -42,13 +42,13 @@
 - name: Set DB_PORT={{ mysql_port }}
   lineinfile: dest={{ directory_tag }}/.env regexp='^DB_PORT=' line=DB_PORT={{ mysql_port }}
 
-- name: Set DB_DATABASE=production
+- name: Set DB_DATABASE={{ dbname }}
   lineinfile: dest={{ directory_tag }}/.env regexp='^DB_DATABASE=' line=DB_DATABASE={{ dbname }}
 
-- name: Set DB_USERNAME=production
+- name: Set DB_USERNAME={{ dbuser }}
   lineinfile: dest={{ directory_tag }}/.env regexp='^DB_USERNAME=' line=DB_USERNAME={{ dbuser }}
 
-- name: Set DB_PASSWORD=production
+- name: Set DB_PASSWORD={{ dbpassword }}
   lineinfile: dest={{ directory_tag }}/.env regexp='^DB_PASSWORD=' line=DB_PASSWORD={{ dbpassword }}
 
 - name: Allow to read and write into storage
