@@ -69,7 +69,7 @@
   command: php artisan key:generate chdir={{ directory_tag }}
 
 - name: Database migration
-  command: php artisan migrate chdir={{ directory_tag }}
+  command: php artisan migrate --force chdir={{ directory_tag }}
 
 - name: Setup node_modules symlink
   file: >
