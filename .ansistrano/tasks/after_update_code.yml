@@ -1,0 +1,9 @@
+- stat: path={{ ansistrano_shared_path }}/{{ item }}
+  with_items: '{{ ansistrano_shared_files }}'
+  register: shared_stats
+
+- name: Generate secret key
+  command: php artisan key:generate chdir={{ ansistrano_release_path }}
+  with_items:
+    - '{{ shared_stats.results}}'
+  when: item.item == ".env" and not item.stat.exists
