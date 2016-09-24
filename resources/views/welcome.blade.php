@@ -38,7 +38,7 @@
     <body>
         <div class="container">
             <div class="content">
-                <div class="title">Framgia Love | Docker Team</div>
+                <div class="title">Framgia Love | Docker Team | by Van Vuong VinGroup</div>
                 <p>Laravel 5</p>
             </div>
         </div>
