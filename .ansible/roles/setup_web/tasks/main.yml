@@ -2,7 +2,8 @@
   locale_gen: name=en_US.UTF-8 state=present
 
 - name: Add Nodesource key
-  apt_key: url=https://deb.nodesource.com/gpgkey/nodesource.gpg.key state=present
+  become: yes
+  shell: curl -s https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add -
 
 - name: Add APT repositories
   apt_repository: repo={{item}} state=present
